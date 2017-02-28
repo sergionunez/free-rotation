@@ -1,0 +1,263 @@
+body {
+}
+
+.screen {
+  margin: 0;
+  padding: 0;
+}
+
+.presentation {
+  min-height: 100vh;
+  background: url('../images/presentation.jpg') no-repeat center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.presentation .body {
+  margin-top: 10vh;
+}
+
+.presentation h1 {
+  color: #fff;
+}
+
+.presentation .link {
+  padding: 5px 15px;
+}
+
+.presentation .media {
+  background: #242424;
+  border: 3px solid #000;
+  border-radius: 10px;
+}
+
+.presentation .media-body .name,
+.presentation .media-body .name:hover,
+.presentation .media-body .name:focus {
+  font-size: 4vh;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.presentation .media-body .name {
+  color: #e8d2d2;
+}
+
+.presentation .media-body span,
+.activename .tag {
+  color: #ffffff;
+  margin-right: 10px;
+  padding: 2px 9px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.presentation .media:hover {
+  border: 2px solid #ffb081;
+  cursor: pointer;
+}
+
+.presentation .media:hover .name {
+  color: #ffb081;
+}
+
+.Fighter {
+  background: #fb871c;
+}
+
+.Tank {
+  background: #034f16;
+}
+
+.Mage {
+  background: #51017c;
+}
+
+.Assassin {
+  background: #000;
+}
+
+.Marksman {
+  background: #741335;
+}
+
+.Support {
+  background: #0195c4;
+}
+
+.media img {
+  height: 11vh;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.land {
+  display: inline-block;
+}
+
+.portrait {
+  display: none;
+}
+
+.backlandscape {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background: #6591b9;
+}
+
+.backportrait {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background: #ede375;
+  display: none;
+}
+
+.details {
+  transition: transform 2s;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  top: 0px;
+  height: 100vh;
+  z-index: 2;
+}
+
+.details span {
+  color: #fff;
+}
+
+.info {
+  width: 30%;
+  position: absolute;
+  top: 5vh;
+  left: 3vw;
+  z-index: 4;
+  background: rgba(40, 38, 39, 0.8);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.info span {
+  text-transform: capitalize;
+  font-size: 3vh;
+}
+
+.activename {
+  position: absolute;
+  bottom: 5vh;
+  right: 3vw;
+  z-index: 4;
+  width: 70%;
+}
+
+.activename .name {
+  color: #f5c13c;
+  font-size: 8vh;
+  text-shadow: 0 0 10px #000;
+}
+
+.activename .boton,
+.activename .boton:hover {
+  color: #8f1e00;
+  cursor: pointer;
+}
+
+.activename .tag {
+  font-size: 4vh;
+}
+
+
+.progress {
+    position: relative;
+    width: 100%;
+    height: 5vh;
+    background-color: grey;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.bar {
+    position: absolute;
+    height: 100%;
+}
+
+.attack {
+  background-color: #ac0000;
+}
+
+.defense {
+  background-color: #0c781d;
+}
+
+.difficulty {
+  background-color: #78004c;
+}
+
+.magic {
+  background-color: #004da7;
+}
+
+@media only screen and (orientation:portrait) {
+  .backlandscape {
+    display: none;
+  }
+
+  .backportrait {
+    display: block;
+  }
+
+  .info {
+    width: 50%;
+    left: 5vw;
+  }
+
+  .activename {
+    width: 80%;
+  }
+
+  .activename .name {
+    font-size: 4.5vh;
+  }
+
+  .activename .tag {
+    font-size: 3vh;
+  }
+
+  .progress {
+    height: 2vh;
+  }
+}
+
+@media only screen and (orientation:landscape) and (max-width: 768px) {
+
+  .presentation .body {
+    margin-top: 0;
+  }
+
+  .portrait {
+    display: inline-block;
+  }
+
+  .land {
+    display: none;
+  }
+
+}

@@ -1,0 +1,65 @@
+<div class="container-fluid presentation" ng-if="index && free">
+
+  <div class="container">
+    <div class="row row-centered">
+      <div class="col-xs-12 col-sm-11 col-lg-7 col-centered body">
+        <h1 class="text-center">Free Rotation</h1>
+
+        <div class="row row-centered">
+          <div ng-repeat="freechamp in free.champions" class="col-xs-6 col-md-6 col-centered link portrait">
+            <div ng-repeat="champion in index | orderObjectBy: 'active' | filter: {id: freechamp.id} : true" class="media" ng-click="changeActive(freechamp.id)">
+              <div class="media-left media-middle">
+                <img src="http://ddragon.leagueoflegends.com/cdn/{{version}}/img/champion/{{champion.key}}.png" alt="" class="media-object">
+              </div>
+              <div class="media-body media-middle">
+                <p class="name">{{champion.name}}</p>
+                <p><span ng-repeat="rol in champion.tags" class="{{rol}}">{{rol}} </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div ng-repeat="freechamp in free.champions" class="col-xs-11 col-sm-6 col-centered link land">
+            <div ng-repeat="champion in index | orderObjectBy: 'active' | filter: {id: freechamp.id} : true" class="media" ng-click="changeActive(freechamp.id)">
+              <div class="media-left media-middle">
+                <img src="http://ddragon.leagueoflegends.com/cdn/{{version}}/img/champion/{{champion.key}}.png" alt="" class="media-object">
+              </div>
+              <div class="media-body media-middle">
+                <p class="name">{{champion.name}}</p>
+                <p><span ng-repeat="rol in champion.tags" class="{{rol}}">{{rol}} </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid details" ng-style="myStyle" ng-if="index">
+  <div class="backlandscape" ng-if="active" style="background: url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{active.key}}_0.jpg') no-repeat center; background-size: cover;">
+
+  </div>
+  <div class="backportrait" ng-if="active" style="background: url('http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{active.key}}_0.jpg') no-repeat center; background-size: cover;">
+
+  </div>
+  <div class="activename">
+    <p class="name text-right">{{active.name}}, {{active.title}} <span class="boton glyphicon glyphicon-remove" ng-click="hide()"></span></p>
+    <!-- <span class="name">{{active.name}}</span>
+    <span class="title">, {{active.title}}</span> -->
+    <p class="text-right"><span ng-repeat="role in active.tags" class="tag {{role}}">{{role}} </span></p>
+  </div>
+
+  <div class="info">
+
+
+    <div ng-repeat="(key,data) in active.info">
+      <span>{{key}} :</span>
+      <div  class="progress">
+        <div class="bar {{key}}" style="width:{{data*10}}%;"></div>
+      </div>
+    </div>
+  </div>
+</div>
